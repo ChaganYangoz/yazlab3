@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{27F267ED-6F32-41CB-A04C-86569614DC8B}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.yazlab3proje PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="yazlab3proje/Chef.cs">
+    <Files>
+      <File FileName="yazlab3proje/Program.cs" Line="209" Column="1" />
+      <File FileName="yazlab3proje/Table.cs" />
+      <File FileName="yazlab3proje/Customer.cs" Line="18" Column="1" />
+      <File FileName="yazlab3proje/Chef.cs" Line="21" Column="1" />
+      <File FileName="yazlab3proje/Waiter.cs" Line="14" Column="34" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="yazlab3proje">
+            <Node name="yazlab3proje">
+              <Node name="Chef.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

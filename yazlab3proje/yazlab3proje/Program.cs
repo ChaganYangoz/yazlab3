@@ -53,6 +53,68 @@ void secim1()
 }
 void secim2()
 {
+    Console.Write("Müşteri sayısını girin: ");
+    int musteriSayisi = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Müşteri ayrılma oranını girin: ");
+    int ayrilanMusteri = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Restoranın kaç saniye çalışacağını girin: ");
+    int calismaSuresi = Convert.ToInt32(Console.ReadLine());
+
+    // Süreler
+    int yemekSuresi = 3;
+    int siparisAlmaSuresi = 2;
+    int yemeSuresi = 3;
+    int odemeSuresi = 1;
+    int maksimumBeklemeSuresi = 20;
+
+    // Başlangıç değerleri
+    int enIyiKazanc = 0;
+    int enIyiMasalar = 0;
+    int enIyiGarsonlar = 0;
+    int enIyiAscilar = 0;
+
+    for (int masalar = 1; masalar <= musteriSayisi; masalar++)
+    {
+        for (int garsonlar = 1; garsonlar <= musteriSayisi; garsonlar++)
+        {
+            for (int ascilar = 1; ascilar <= musteriSayisi; ascilar++)
+            {
+                int toplamKazanc = 0;
+                for (int i = 0; i < musteriSayisi; i++)
+                {
+                    if (i % ayrilanMusteri == 0 && i != 0)
+                    {
+                        // Müşteri ayrılıyor
+                        masalar--;
+                    }
+
+                    int beklemeSuresi = masalar <= 0 ? Math.Min(maksimumBeklemeSuresi, i * odemeSuresi) : 0;
+
+                    toplamKazanc++; // Müşteri gelirinden 1 birim kazanç
+
+                    // Süre hesaplama
+                    int toplamSure = (masalar * yemeSuresi) + (masalar * odemeSuresi) + beklemeSuresi;
+                    toplamSure += (garsonlar * siparisAlmaSuresi) + (ascilar * yemekSuresi);
+
+                    if (toplamSure <= calismaSuresi)
+                    {
+                        toplamKazanc -= (masalar + garsonlar + ascilar); // Toplam maliyet
+                        if (toplamKazanc > enIyiKazanc)
+                        {
+                            enIyiKazanc = toplamKazanc;
+                            enIyiMasalar = masalar;
+                            enIyiGarsonlar = garsonlar;
+                            enIyiAscilar = ascilar;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    Console.WriteLine($"En karlı durum: {enIyiKazanc} birim kazanç ile {enIyiMasalar} masa, {enIyiGarsonlar} garson, {enIyiAscilar} aşçı ile elde edilir.");
 
 }
 
@@ -143,5 +205,7 @@ void SiparisAlma()
 
 void AsciyaIlet()
 {
+
+
 
 }
